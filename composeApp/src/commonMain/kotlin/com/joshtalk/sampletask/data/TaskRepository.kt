@@ -9,8 +9,18 @@ import app.cash.sqldelight.coroutines.mapToList
 import kotlinx.coroutines.Dispatchers
 import com.joshtalk.sampletask.db.Task
 
+/**
+ * Repository layer providing reactive access to task data stored in SQLDelight database.
+ * Handles conversion between database Task entities and domain TaskData models.
+ * All database operations use Flow for reactive updates across the UI.
+ */
 class TaskRepository(private val database: TaskDatabase) {
     
+    /**
+     * Retrieves all stored tasks as a reactive Flow that emits on any database change.
+     * Results are automatically mapped from database entities to domain models.
+     * @return Flow emitting list of all tasks, automatically updates on inserts/deletes
+     */
     fun getAllTasks(): Flow<List<TaskData>> {
         return database.taskDatabaseQueries.selectAll()
             .asFlow()
@@ -18,14 +28,28 @@ class TaskRepository(private val database: TaskDatabase) {
             .map { tasks -> tasks.map { it.toTaskData() } }
     }
     
+    /**
+     * Calculates total duration of all completed tasks in seconds.
+     * Used for summary statistics in task history screen.
+     * @return Sum of all task durations, or null if no tasks exist
+     */
     fun getTotalDuration(): Long? {
         return database.taskDatabaseQueries.getTotalDuration().executeAsOneOrNull()?.SUM
     }
     
+    /**
+     * Returns count of all completed tasks across all types.
+     * @return Total number of tasks in database
+     */
     fun getTaskCount(): Long {
         return database.taskDatabaseQueries.getTaskCount().executeAsOne()
     }
     
+    /**
+     * Persists a new task to the database.
+     * Handles polymorphic TaskData types and maps them to appropriate database columns.
+     * @param task Domain model of the task to store (TextReading, ImageDescription, or PhotoCapture)
+     */
     fun insertTask(task: TaskData) {
         when (task) {
             is TaskData.TextReading -> {
@@ -67,6 +91,11 @@ class TaskRepository(private val database: TaskDatabase) {
         }
     }
     
+    /**
+     * Converts database Task entity to domain TaskData sealed class instance.
+     * Maps taskType string to appropriate subclass and handles nullable fields.
+     * @throws IllegalArgumentException if taskType is not recognized
+     */
     private fun Task.toTaskData(): TaskData {
         return when (taskType) {
             "text_reading" -> TaskData.TextReading(

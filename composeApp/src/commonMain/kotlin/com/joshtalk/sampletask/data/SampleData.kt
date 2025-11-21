@@ -3,6 +3,14 @@ package com.joshtalk.sampletask.data
 import com.joshtalk.sampletask.domain.Product
 import com.joshtalk.sampletask.domain.ProductsResponse
 
+/**
+ * Bundled fallback data providing sample products when API is unavailable.
+ * Ensures app remains functional offline or during network failures.
+ * Products contain both text descriptions and image URLs suitable for all task types.
+ * 
+ * Text passages are crafted for field agents to practice clear enunciation and pacing.
+ * Images demonstrate real-world product photography for description tasks.
+ */
 object SampleData {
     val sampleProducts: List<Product> = listOf(
         Product(
@@ -34,5 +42,9 @@ object SampleData {
         )
     )
 
+    /**
+     * Wraps sample products in ProductsResponse format matching API structure.
+     * Used by ApiService when network fetch fails or returns empty results.
+     */
     fun fallbackResponse(): ProductsResponse = ProductsResponse(sampleProducts)
 }

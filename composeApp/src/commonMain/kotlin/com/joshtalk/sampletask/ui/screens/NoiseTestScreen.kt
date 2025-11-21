@@ -18,6 +18,18 @@ import com.joshtalk.sampletask.ui.theme.ErrorRed
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+/**
+ * Screen implementing the ambient noise gate check before allowing task entry.
+ * Measures noise level for 3 seconds and calculates average. Only allows progression
+ * to task selection if average < 40dB threshold is met.
+ * 
+ * This ensures recordings happen in sufficiently quiet environments for quality control.
+ * The pass threshold and test duration are hardcoded based on field requirements.
+ * 
+ * @param noiseDetector Platform-specific noise detection service
+ * @param onNavigateBack Callback to return to previous screen
+ * @param onNavigateToTaskSelection Callback to proceed to task selection (only on pass)
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NoiseTestScreen(
@@ -37,7 +49,6 @@ fun NoiseTestScreen(
             noiseDetector.release()
         }
     }
-    
     Scaffold(
         topBar = {
             TopAppBar(
@@ -83,7 +94,6 @@ fun NoiseTestScreen(
             
             Spacer(modifier = Modifier.weight(1f))
             
-            // Test result message
             testResult?.let { message ->
                 Card(
                     colors = CardDefaults.cardColors(
@@ -100,7 +110,6 @@ fun NoiseTestScreen(
                 }
             }
             
-            // Start Test button
             Button(
                 onClick = {
                     if (!isTesting) {
@@ -114,7 +123,7 @@ fun NoiseTestScreen(
                         }
                         
                         scope.launch {
-                            delay(3000) // Test for 3 seconds
+                            delay(3000)
                             noiseDetector.stopDetection()
                             isTesting = false
                             averageDb = if (dbReadings.isNotEmpty()) {

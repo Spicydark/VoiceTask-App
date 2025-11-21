@@ -16,6 +16,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.joshtalk.sampletask.ui.theme.PrimaryBlue
 
+/**
+ * Interactive microphone button component implementing press-and-hold recording pattern.
+ * Visual feedback changes color and text during recording. Uses gesture detection to track
+ * press duration - recording starts on press and stops on release.
+ * 
+ * This pattern ensures agents cannot submit recordings shorter than the hold duration,
+ * providing a natural way to enforce minimum recording times.
+ * 
+ * @param onPressStart Callback invoked when user begins pressing the button
+ * @param onPressRelease Callback invoked when user releases the button
+ * @param isRecording Current recording state to update visual feedback
+ * @param modifier Optional modifier for positioning/sizing
+ */
 @Composable
 fun PressAndHoldMicButton(
     onPressStart: () -> Unit,

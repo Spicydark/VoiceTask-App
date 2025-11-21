@@ -15,6 +15,11 @@ import com.joshtalk.sampletask.platform.CameraProvider
 import com.joshtalk.sampletask.platform.NoiseDetector
 import com.joshtalk.sampletask.platform.PlatformContext
 
+/**
+ * Main entry point for the Android application.
+ * Initializes platform-specific services (audio recording/playback, camera, noise detection)
+ * and sets up the SQLDelight database for task persistence.
+ */
 class MainActivity : ComponentActivity() {
     private lateinit var audioRecorder: AudioRecorder
     private lateinit var audioPlayer: AudioPlayer
@@ -25,14 +30,12 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        // Initialize platform-specific components
         val platformContext = PlatformContext(this)
         audioRecorder = AudioRecorder(platformContext)
         audioPlayer = AudioPlayer(platformContext)
         noiseDetector = NoiseDetector(platformContext)
         cameraProvider = CameraProvider(this, this)
         
-        // Initialize database
         val driver = AndroidSqliteDriver(TaskDatabase.Schema, this, "task.db")
         val database = TaskDatabase(driver)
         taskRepository = TaskRepository(database)
@@ -50,6 +53,10 @@ class MainActivity : ComponentActivity() {
         }
     }
     
+    /**
+     * Ensures proper cleanup of audio and noise detection resources when activity is destroyed.
+     * Camera resources are managed by CameraX lifecycle and don't require explicit cleanup here.
+     */
     override fun onDestroy() {
         super.onDestroy()
         audioRecorder.release()

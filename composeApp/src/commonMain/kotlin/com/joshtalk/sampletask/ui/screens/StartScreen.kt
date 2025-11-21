@@ -15,6 +15,13 @@ import androidx.compose.ui.unit.sp
 import com.joshtalk.sampletask.ui.theme.PrimaryBlue
 import com.joshtalk.sampletask.ui.theme.TextGray
 
+/**
+ * Initial onboarding screen introducing the Sample Task workflow.
+ * Displays bilingual (English/Hindi) welcome message and initiates the task flow.
+ * First step in the 7-screen guided workflow for field agents.
+ * 
+ * @param onNavigateToNoiseTest Callback to proceed to ambient noise testing
+ */
 @Composable
 fun StartScreen(onNavigateToNoiseTest: () -> Unit) {
     Box(
@@ -30,7 +37,6 @@ fun StartScreen(onNavigateToNoiseTest: () -> Unit) {
         ) {
             Spacer(modifier = Modifier.weight(1f))
             
-            // Heading with "Sample Task" highlighted
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(4.dp)
@@ -51,7 +57,6 @@ fun StartScreen(onNavigateToNoiseTest: () -> Unit) {
             
             Spacer(modifier = Modifier.height(8.dp))
             
-            // Hindi subtext
             Text(
                 text = "Pehele hum ek sample task karte hain.",
                 fontSize = 16.sp,
@@ -62,7 +67,6 @@ fun StartScreen(onNavigateToNoiseTest: () -> Unit) {
             
             Spacer(modifier = Modifier.weight(1f))
             
-            // Start button
             Button(
                 onClick = onNavigateToNoiseTest,
                 modifier = Modifier

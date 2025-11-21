@@ -10,6 +10,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 
+/**
+ * iOS stub implementation of PlatformAsyncImage.
+ * Displays placeholder text instead of actual image as native iOS image loader
+ * (SDWebImageSwiftUI or similar) is not yet integrated.
+ * Prevents build failures while allowing Android to use Coil for real image loading.
+ */
 @Composable
 actual fun PlatformAsyncImage(
     model: Any?,
@@ -17,7 +23,6 @@ actual fun PlatformAsyncImage(
     modifier: Modifier,
     contentScale: ContentScale
 ) {
-    // Placeholder until a native image loader is wired for iOS. Avoids build failures.
     Box(
         modifier = modifier
             .background(MaterialTheme.colorScheme.surfaceVariant),
