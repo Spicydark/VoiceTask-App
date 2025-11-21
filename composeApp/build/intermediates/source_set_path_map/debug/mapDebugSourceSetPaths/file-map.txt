@@ -1,0 +1,71 @@
+com.joshtalk.sampletask.composeApp-runtime-saveable-release-0 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\036a8fe150cb9460479d288053835e0a\transformed\runtime-saveable-release\res
+com.joshtalk.sampletask.composeApp-ui-unit-release-1 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\101ef83e552c791f2856d8b1aa0bc10d\transformed\ui-unit-release\res
+com.joshtalk.sampletask.composeApp-profileinstaller-1.3.1-2 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\res
+com.joshtalk.sampletask.composeApp-annotation-experimental-1.4.0-3 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\1323079c07a14eef782790d7aa33f4d1\transformed\annotation-experimental-1.4.0\res
+com.joshtalk.sampletask.composeApp-foundation-release-4 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\1965f580f298646d6c9db1837466a694\transformed\foundation-release\res
+com.joshtalk.sampletask.composeApp-lifecycle-runtime-release-5 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\19dce001d20a8b3a97844a4657e66251\transformed\lifecycle-runtime-release\res
+com.joshtalk.sampletask.composeApp-lifecycle-livedata-core-ktx-2.8.0-6 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\1aa812b0a0c97e975c10f847f2cf94c4\transformed\lifecycle-livedata-core-ktx-2.8.0\res
+com.joshtalk.sampletask.composeApp-customview-poolingcontainer-1.0.0-7 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\27e5e1875c89987bdccc2e07d9e9d0d3\transformed\customview-poolingcontainer-1.0.0\res
+com.joshtalk.sampletask.composeApp-material-release-8 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\2b57981b98afa672319d5c48bbde3d54\transformed\material-release\res
+com.joshtalk.sampletask.composeApp-lifecycle-viewmodel-savedstate-2.8.0-9 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\34215d0a386080e83835a3c81b96487e\transformed\lifecycle-viewmodel-savedstate-2.8.0\res
+com.joshtalk.sampletask.composeApp-emoji2-views-helper-1.3.0-10 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\38852592f21f2de8be2692c90f204e2f\transformed\emoji2-views-helper-1.3.0\res
+com.joshtalk.sampletask.composeApp-lifecycle-livedata-2.8.0-11 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\3900fa5a5a082657038f86ed93997a59\transformed\lifecycle-livedata-2.8.0\res
+com.joshtalk.sampletask.composeApp-ui-text-release-12 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\3bd66841a9ede0c2a443535839b48cd4\transformed\ui-text-release\res
+com.joshtalk.sampletask.composeApp-sqlite-2.4.0-13 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\3ccc4aa7529222be04398b340e4e183a\transformed\sqlite-2.4.0\res
+com.joshtalk.sampletask.composeApp-lifecycle-runtime-compose-release-14 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\40ce209bf80481f81f12fd74f1fa5c7c\transformed\lifecycle-runtime-compose-release\res
+com.joshtalk.sampletask.composeApp-ui-tooling-release-15 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\4cd76af9ae6f7707c9f9471afe43f4cb\transformed\ui-tooling-release\res
+com.joshtalk.sampletask.composeApp-camera-lifecycle-1.3.3-16 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\4d1b01a4b7f451266105a5fba299436c\transformed\camera-lifecycle-1.3.3\res
+com.joshtalk.sampletask.composeApp-appcompat-resources-1.6.1-17 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\4f2f038ff16373982f59f235a2b5c83b\transformed\appcompat-resources-1.6.1\res
+com.joshtalk.sampletask.composeApp-navigation-common-2.7.7-18 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\56da384ae09d7173be61592b4ad30a58\transformed\navigation-common-2.7.7\res
+com.joshtalk.sampletask.composeApp-ui-tooling-preview-release-19 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\57b50a789ffb1eac29a4b6ee1d8e65bb\transformed\ui-tooling-preview-release\res
+com.joshtalk.sampletask.composeApp-ui-util-release-20 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\5fa803e8c4164d897c94ec1303392054\transformed\ui-util-release\res
+com.joshtalk.sampletask.composeApp-lifecycle-viewmodel-release-21 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\650d6ab997fcde64d4c3a9eaa337404c\transformed\lifecycle-viewmodel-release\res
+com.joshtalk.sampletask.composeApp-appcompat-1.6.1-22 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\668d271c3f8c0d4ff0fe21103c676ee0\transformed\appcompat-1.6.1\res
+com.joshtalk.sampletask.composeApp-foundation-layout-release-23 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\702f0b0f8ce118a725f1cdeeb72e775f\transformed\foundation-layout-release\res
+com.joshtalk.sampletask.composeApp-camera-view-1.3.3-24 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\7223138dfba165d6b4c02ff9b5a78d76\transformed\camera-view-1.3.3\res
+com.joshtalk.sampletask.composeApp-emoji2-1.3.0-25 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\7a5c38daf3b53bf11b98fadd2785e954\transformed\emoji2-1.3.0\res
+com.joshtalk.sampletask.composeApp-activity-compose-1.9.0-26 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\7c0ce47ebb0eaf80c0a837bbadfd02eb\transformed\activity-compose-1.9.0\res
+com.joshtalk.sampletask.composeApp-core-ktx-1.13.0-27 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\833332d9ac33fa055b5749d5d4d88617\transformed\core-ktx-1.13.0\res
+com.joshtalk.sampletask.composeApp-coil-base-2.6.0-28 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\835bb2a97faea217bf206371ea4eaf40\transformed\coil-base-2.6.0\res
+com.joshtalk.sampletask.composeApp-lifecycle-livedata-core-2.8.0-29 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\93d45389482cae8dcce70f8e0708f584\transformed\lifecycle-livedata-core-2.8.0\res
+com.joshtalk.sampletask.composeApp-ui-release-30 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\9484d1059067cef86f40c3bee1bbecb0\transformed\ui-release\res
+com.joshtalk.sampletask.composeApp-ui-graphics-release-31 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\96c1d9f338acc061081d76abedf4f23c\transformed\ui-graphics-release\res
+com.joshtalk.sampletask.composeApp-lifecycle-runtime-ktx-release-32 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\aa34615685a0b14d3f7690a9298e94b5\transformed\lifecycle-runtime-ktx-release\res
+com.joshtalk.sampletask.composeApp-navigation-runtime-ktx-2.7.7-33 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\ab2d309d3f07832c5ce692fa59af4d37\transformed\navigation-runtime-ktx-2.7.7\res
+com.joshtalk.sampletask.composeApp-material3-release-34 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\ad653c92841c7b66b5d2c42eecd671c9\transformed\material3-release\res
+com.joshtalk.sampletask.composeApp-camera-core-1.3.3-35 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\b015701b08b8ea5eeccc344ab5dfac3b\transformed\camera-core-1.3.3\res
+com.joshtalk.sampletask.composeApp-fragment-1.3.6-36 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\b529a773d69e0511791a96cfe6813216\transformed\fragment-1.3.6\res
+com.joshtalk.sampletask.composeApp-camera-camera2-1.3.3-37 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\b67e69a85c33b6969d440b43dd60989e\transformed\camera-camera2-1.3.3\res
+com.joshtalk.sampletask.composeApp-animation-core-release-38 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\b731d15e44d10d79ebfb85c259ecdf01\transformed\animation-core-release\res
+com.joshtalk.sampletask.composeApp-lifecycle-viewmodel-ktx-2.8.0-39 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\bf0d632d361136bbb0608ada863654d9\transformed\lifecycle-viewmodel-ktx-2.8.0\res
+com.joshtalk.sampletask.composeApp-sqlite-framework-2.4.0-40 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\c1da2aefae5b2db2c321c23de4f4ce6a\transformed\sqlite-framework-2.4.0\res
+com.joshtalk.sampletask.composeApp-startup-runtime-1.1.1-41 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\c3efc6ccd5b84446cd8bad44a4c5b287\transformed\startup-runtime-1.1.1\res
+com.joshtalk.sampletask.composeApp-ui-tooling-data-release-42 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\c4641373c1746558284f068324e4341d\transformed\ui-tooling-data-release\res
+com.joshtalk.sampletask.composeApp-material-icons-extended-release-43 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\ceac551459752ab76be22f05411535d0\transformed\material-icons-extended-release\res
+com.joshtalk.sampletask.composeApp-navigation-common-ktx-2.7.7-44 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\cfee3b6aa75d48f3604e8dc4f528c0c3\transformed\navigation-common-ktx-2.7.7\res
+com.joshtalk.sampletask.composeApp-lifecycle-process-2.8.0-45 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\d4d3b659de85296c7fc3cef6208b2e4f\transformed\lifecycle-process-2.8.0\res
+com.joshtalk.sampletask.composeApp-core-1.13.0-46 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\d5e68d533f826939c7d46e056e865701\transformed\core-1.13.0\res
+com.joshtalk.sampletask.composeApp-core-runtime-2.2.0-47 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\d6d500536bf3a38904e30cec5e1a2cd6\transformed\core-runtime-2.2.0\res
+com.joshtalk.sampletask.composeApp-navigation-compose-2.7.7-48 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\da8b03e6e6156b0ce8a58abe0bbfeabd\transformed\navigation-compose-2.7.7\res
+com.joshtalk.sampletask.composeApp-runtime-release-49 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\e2be60c2d7be566d5a3e77063996e018\transformed\runtime-release\res
+com.joshtalk.sampletask.composeApp-ui-geometry-release-50 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\e89306c68d2639bd29169b4e98af8cfa\transformed\ui-geometry-release\res
+com.joshtalk.sampletask.composeApp-material-icons-core-release-51 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\eae85dccd705a74351a59ed15a839117\transformed\material-icons-core-release\res
+com.joshtalk.sampletask.composeApp-navigation-runtime-2.7.7-52 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\edd32f857b7aa7acd91251d078d4da8b\transformed\navigation-runtime-2.7.7\res
+com.joshtalk.sampletask.composeApp-savedstate-ktx-1.2.1-53 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\ef4c0521f8f6acca55e26f3ccaed78a1\transformed\savedstate-ktx-1.2.1\res
+com.joshtalk.sampletask.composeApp-savedstate-1.2.1-54 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\f106efad674a95c99beb3e9e897b94f1\transformed\savedstate-1.2.1\res
+com.joshtalk.sampletask.composeApp-animation-release-55 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\f46e5f57d194ff07d1112ff2a4947959\transformed\animation-release\res
+com.joshtalk.sampletask.composeApp-activity-ktx-1.9.0-56 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\f80c4d6adbf427fb2a08b70df69bd883\transformed\activity-ktx-1.9.0\res
+com.joshtalk.sampletask.composeApp-camera-video-1.3.3-57 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\f945b873d264dda3d58730f76b7c33d0\transformed\camera-video-1.3.3\res
+com.joshtalk.sampletask.composeApp-lifecycle-viewmodel-compose-release-58 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\fe741502533cd08a49c82dc78ae4183d\transformed\lifecycle-viewmodel-compose-release\res
+com.joshtalk.sampletask.composeApp-material-ripple-release-59 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\ff1174b955abd7df4f8de70a5750c970\transformed\material-ripple-release\res
+com.joshtalk.sampletask.composeApp-activity-1.9.0-60 C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\fff363c5000cb16d6966284fbef0782e\transformed\activity-1.9.0\res
+com.joshtalk.sampletask.composeApp-pngs-61 C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\build\generated\res\pngs\debug
+com.joshtalk.sampletask.composeApp-resValues-62 C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\build\generated\res\resValues\debug
+com.joshtalk.sampletask.composeApp-updated_navigation_xml-63 C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\build\generated\updated_navigation_xml\debug
+com.joshtalk.sampletask.composeApp-packageDebugResources-64 C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.joshtalk.sampletask.composeApp-packageDebugResources-65 C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.joshtalk.sampletask.composeApp-debug-66 C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\build\intermediates\merged_res\debug\mergeDebugResources
+com.joshtalk.sampletask.composeApp-androidDebug-67 C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidDebug\res
+com.joshtalk.sampletask.composeApp-androidMain-68 C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\res
+com.joshtalk.sampletask.composeApp-debug-69 C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\debug\res
+com.joshtalk.sampletask.composeApp-main-70 C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\main\res

@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.joshtalk.sampletask.composeApp-mergeDebugResources-63:/values-land/values-land.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Excelr Solutions\\.gradle\\caches\\9.0-milestone-1\\transforms\\668d271c3f8c0d4ff0fe21103c676ee0\\transformed\\appcompat-1.6.1\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
+                    }
+                }
+            ]
+        }
+    ]
+}

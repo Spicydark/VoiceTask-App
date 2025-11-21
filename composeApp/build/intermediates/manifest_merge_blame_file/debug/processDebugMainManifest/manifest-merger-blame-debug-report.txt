@@ -1,0 +1,179 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.joshtalk.sampletask"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-feature
+11-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:5:5-85
+12        android:name="android.hardware.camera"
+12-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:5:19-57
+13        android:required="false" />
+13-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:5:58-82
+14
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:7:5-67
+15-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:7:22-64
+16    <uses-permission android:name="android.permission.CAMERA" />
+16-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:8:5-65
+16-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:8:22-62
+17    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+17-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:9:5-71
+17-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:9:22-68
+18    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+18-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:9:5-71
+18-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:9:22-68
+19    <uses-permission
+19-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:11:5-13:40
+20        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+20-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:11:22-78
+21        android:maxSdkVersion="32" />
+21-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:12:9-35
+22    <uses-permission
+22-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:14:5-15:38
+23        android:name="android.permission.READ_EXTERNAL_STORAGE"
+23-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:14:22-77
+24        android:maxSdkVersion="32" />
+24-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:15:9-35
+25
+26    <permission
+26-->[androidx.core:core:1.13.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\d5e68d533f826939c7d46e056e865701\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+27        android:name="com.joshtalk.sampletask.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+27-->[androidx.core:core:1.13.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\d5e68d533f826939c7d46e056e865701\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+28        android:protectionLevel="signature" />
+28-->[androidx.core:core:1.13.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\d5e68d533f826939c7d46e056e865701\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+29
+30    <uses-permission android:name="com.joshtalk.sampletask.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+30-->[androidx.core:core:1.13.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\d5e68d533f826939c7d46e056e865701\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+30-->[androidx.core:core:1.13.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\d5e68d533f826939c7d46e056e865701\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+31
+32    <application
+32-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:18:5-32:19
+33        android:allowBackup="true"
+33-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:19:9-35
+34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+34-->[androidx.core:core:1.13.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\d5e68d533f826939c7d46e056e865701\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+35        android:debuggable="true"
+36        android:extractNativeLibs="false"
+37        android:icon="@android:drawable/ic_menu_camera"
+37-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:20:9-56
+38        android:label="Sample Task App"
+38-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:21:9-40
+39        android:testOnly="true"
+40        android:theme="@android:style/Theme.Material.Light.NoActionBar" >
+40-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:22:9-72
+41        <activity
+41-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:23:9-31:20
+42            android:name="com.joshtalk.sampletask.MainActivity"
+42-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:24:13-41
+43            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+43-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:26:13-87
+44            android:exported="true" >
+44-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:25:13-36
+45            <intent-filter>
+45-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:27:13-30:29
+46                <action android:name="android.intent.action.MAIN" />
+46-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:28:17-69
+46-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:28:25-66
+47
+48                <category android:name="android.intent.category.LAUNCHER" />
+48-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:29:17-77
+48-->C:\Users\Excelr Solutions\Documents\Surya\Android App Development\JoshTalks\SampleTaskApp\composeApp\src\androidMain\AndroidManifest.xml:29:27-74
+49            </intent-filter>
+50        </activity>
+51
+52        <service
+52-->[androidx.camera:camera-camera2:1.3.3] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\b67e69a85c33b6969d440b43dd60989e\transformed\camera-camera2-1.3.3\AndroidManifest.xml:24:9-33:19
+53            android:name="androidx.camera.core.impl.MetadataHolderService"
+53-->[androidx.camera:camera-camera2:1.3.3] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\b67e69a85c33b6969d440b43dd60989e\transformed\camera-camera2-1.3.3\AndroidManifest.xml:25:13-75
+54            android:enabled="false"
+54-->[androidx.camera:camera-camera2:1.3.3] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\b67e69a85c33b6969d440b43dd60989e\transformed\camera-camera2-1.3.3\AndroidManifest.xml:26:13-36
+55            android:exported="false" >
+55-->[androidx.camera:camera-camera2:1.3.3] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\b67e69a85c33b6969d440b43dd60989e\transformed\camera-camera2-1.3.3\AndroidManifest.xml:27:13-37
+56            <meta-data
+56-->[androidx.camera:camera-camera2:1.3.3] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\b67e69a85c33b6969d440b43dd60989e\transformed\camera-camera2-1.3.3\AndroidManifest.xml:30:13-32:89
+57                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+57-->[androidx.camera:camera-camera2:1.3.3] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\b67e69a85c33b6969d440b43dd60989e\transformed\camera-camera2-1.3.3\AndroidManifest.xml:31:17-103
+58                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+58-->[androidx.camera:camera-camera2:1.3.3] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\b67e69a85c33b6969d440b43dd60989e\transformed\camera-camera2-1.3.3\AndroidManifest.xml:32:17-86
+59        </service>
+60
+61        <activity
+61-->[androidx.compose.ui:ui-tooling-android:1.6.7] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\4cd76af9ae6f7707c9f9471afe43f4cb\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
+62            android:name="androidx.compose.ui.tooling.PreviewActivity"
+62-->[androidx.compose.ui:ui-tooling-android:1.6.7] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\4cd76af9ae6f7707c9f9471afe43f4cb\transformed\ui-tooling-release\AndroidManifest.xml:24:13-71
+63            android:exported="true" />
+63-->[androidx.compose.ui:ui-tooling-android:1.6.7] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\4cd76af9ae6f7707c9f9471afe43f4cb\transformed\ui-tooling-release\AndroidManifest.xml:25:13-36
+64
+65        <provider
+65-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\7a5c38daf3b53bf11b98fadd2785e954\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+66            android:name="androidx.startup.InitializationProvider"
+66-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\7a5c38daf3b53bf11b98fadd2785e954\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+67            android:authorities="com.joshtalk.sampletask.androidx-startup"
+67-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\7a5c38daf3b53bf11b98fadd2785e954\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+68            android:exported="false" >
+68-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\7a5c38daf3b53bf11b98fadd2785e954\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+69            <meta-data
+69-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\7a5c38daf3b53bf11b98fadd2785e954\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+70                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+70-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\7a5c38daf3b53bf11b98fadd2785e954\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+71                android:value="androidx.startup" />
+71-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\7a5c38daf3b53bf11b98fadd2785e954\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+72            <meta-data
+72-->[androidx.lifecycle:lifecycle-process:2.8.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\d4d3b659de85296c7fc3cef6208b2e4f\transformed\lifecycle-process-2.8.0\AndroidManifest.xml:29:13-31:52
+73                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+73-->[androidx.lifecycle:lifecycle-process:2.8.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\d4d3b659de85296c7fc3cef6208b2e4f\transformed\lifecycle-process-2.8.0\AndroidManifest.xml:30:17-78
+74                android:value="androidx.startup" />
+74-->[androidx.lifecycle:lifecycle-process:2.8.0] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\d4d3b659de85296c7fc3cef6208b2e4f\transformed\lifecycle-process-2.8.0\AndroidManifest.xml:31:17-49
+75            <meta-data
+75-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+76                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+76-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+77                android:value="androidx.startup" />
+77-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+78        </provider>
+79
+80        <receiver
+80-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+81            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+81-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+82            android:directBootAware="false"
+82-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+83            android:enabled="true"
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+84            android:exported="true"
+84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+85            android:permission="android.permission.DUMP" >
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+86            <intent-filter>
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+87                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+87-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+87-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+88            </intent-filter>
+89            <intent-filter>
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+90                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+90-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+90-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+91            </intent-filter>
+92            <intent-filter>
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+93                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+93-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+93-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+94            </intent-filter>
+95            <intent-filter>
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+96                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+96-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+96-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Excelr Solutions\.gradle\caches\9.0-milestone-1\transforms\10f05d436a192290aa6285e1812dfb4b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+97            </intent-filter>
+98        </receiver>
+99    </application>
+100
+101</manifest>
