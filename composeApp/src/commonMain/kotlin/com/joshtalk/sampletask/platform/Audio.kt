@@ -29,6 +29,7 @@ sealed class RecordingState {
  * Implementations enforce 10-20 second duration constraints for task compliance.
  */
 expect class AudioRecorder(context: PlatformContext) {
+    fun hasPermission(): Boolean
     fun startRecording()
     fun stopRecording(): RecordingState
     fun getCurrentState(): RecordingState
@@ -52,6 +53,7 @@ expect class AudioPlayer(context: PlatformContext) {
  * Used during the pre-task noise gate check to ensure quiet environment (< 40 dB threshold).
  */
 expect class NoiseDetector(context: PlatformContext) {
+    fun hasPermission(): Boolean
     fun startDetection(onNoiseLevel: (Float) -> Unit)
     fun stopDetection()
     fun release()

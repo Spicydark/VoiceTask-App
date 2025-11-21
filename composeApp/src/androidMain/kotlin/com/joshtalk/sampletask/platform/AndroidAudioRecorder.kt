@@ -1,7 +1,10 @@
 package com.joshtalk.sampletask.platform
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.media.MediaRecorder
 import android.os.Build
+import androidx.core.content.ContextCompat
 import java.io.File
 import kotlinx.coroutines.*
 
@@ -21,6 +24,13 @@ actual class AudioRecorder actual constructor(private val context: PlatformConte
      * Creates a timestamped audio file in cache directory and begins recording in AAC format.
      * Updates state to Recording on success or Error if initialization fails.
      */
+    actual fun hasPermission(): Boolean {
+        return ContextCompat.checkSelfPermission(
+            context.androidContext,
+            Manifest.permission.RECORD_AUDIO
+        ) == PackageManager.PERMISSION_GRANTED
+    }
+
     actual fun startRecording() {
         try {
             val timestamp = System.currentTimeMillis()
@@ -188,6 +198,13 @@ actual class NoiseDetector actual constructor(private val context: PlatformConte
      * for comparing relative noise levels, not calibrated to absolute SPL measurements.
      * @param onNoiseLevel Callback invoked every 100ms with current decibel reading (0-100+ range)
      */
+    actual fun hasPermission(): Boolean {
+        return ContextCompat.checkSelfPermission(
+            context.androidContext,
+            Manifest.permission.RECORD_AUDIO
+        ) == PackageManager.PERMISSION_GRANTED
+    }
+
     actual fun startDetection(onNoiseLevel: (Float) -> Unit) {
         try {
             mediaRecorder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {

@@ -27,6 +27,8 @@ import com.joshtalk.sampletask.ui.theme.PrimaryBlue
 import com.joshtalk.sampletask.ui.theme.TextGray
 import kotlinx.coroutines.launch
 
+private const val MIC_PERMISSION_MESSAGE = "Microphone permission not granted. Please enable it in Settings to record."
+
 /**
  * Screen for Text Reading task workflow where agent reads aloud a product description.
  * Fetches random product from API, handles recording with 10-20s validation, and provides
@@ -55,6 +57,7 @@ fun TextReadingScreen(
     var isRecording by remember { mutableStateOf(false) }
     var recordingResult by remember { mutableStateOf<RecordingState?>(null) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
+    var hasMicPermission by remember { mutableStateOf(audioRecorder.hasPermission()) }
     
     var checkNoNoise by remember { mutableStateOf(false) }
     var checkNoMistakes by remember { mutableStateOf(false) }
@@ -82,6 +85,10 @@ fun TextReadingScreen(
             audioRecorder.release()
             audioPlayer.release()
         }
+    }
+
+    LaunchedEffect(Unit) {
+        hasMicPermission = audioRecorder.hasPermission()
     }
     
     Scaffold(
@@ -114,6 +121,15 @@ fun TextReadingScreen(
                 fontSize = 16.sp,
                 color = TextGray
             )
+
+            if (!hasMicPermission) {
+                Text(
+                    text = MIC_PERMISSION_MESSAGE,
+                    color = ErrorRed,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.SemiBold
+                )
+            }
             
             if (isLoading) {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
@@ -137,6 +153,15 @@ fun TextReadingScreen(
             
             PressAndHoldMicButton(
                 onPressStart = {
+                    val permissionGranted = audioRecorder.hasPermission()
+                    hasMicPermission = permissionGranted
+                    if (!permissionGranted) {
+                        errorMessage = MIC_PERMISSION_MESSAGE
+                        recordingResult = null
+                        isRecording = false
+                        return@PressAndHoldMicButton
+                    }
+
                     isRecording = true
                     recordingResult = null
                     errorMessage = null
@@ -146,6 +171,9 @@ fun TextReadingScreen(
                     audioRecorder.startRecording()
                 },
                 onPressRelease = {
+                    if (!isRecording) {
+                        return@PressAndHoldMicButton
+                    }
                     isRecording = false
                     val result = audioRecorder.stopRecording()
                     recordingResult = result

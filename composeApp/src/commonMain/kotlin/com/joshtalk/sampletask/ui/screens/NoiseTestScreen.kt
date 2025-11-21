@@ -8,6 +8,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.joshtalk.sampletask.platform.NoiseDetector
@@ -17,6 +18,8 @@ import com.joshtalk.sampletask.ui.theme.SuccessGreen
 import com.joshtalk.sampletask.ui.theme.ErrorRed
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+
+private const val MIC_PERMISSION_MESSAGE = "Microphone permission not granted. Please enable it in Settings to continue."
 
 /**
  * Screen implementing the ambient noise gate check before allowing task entry.
@@ -41,6 +44,8 @@ fun NoiseTestScreen(
     var isTesting by remember { mutableStateOf(false) }
     var testResult by remember { mutableStateOf<String?>(null) }
     var averageDb by remember { mutableStateOf(0f) }
+    var hasMicPermission by remember { mutableStateOf(noiseDetector.hasPermission()) }
+    var permissionError by remember { mutableStateOf<String?>(null) }
     val scope = rememberCoroutineScope()
     val passThreshold = 40f
     
@@ -48,6 +53,11 @@ fun NoiseTestScreen(
         onDispose {
             noiseDetector.release()
         }
+    }
+
+    LaunchedEffect(Unit) {
+        hasMicPermission = noiseDetector.hasPermission()
+        permissionError = if (!hasMicPermission) MIC_PERMISSION_MESSAGE else null
     }
     Scaffold(
         topBar = {
@@ -90,6 +100,17 @@ fun NoiseTestScreen(
             
             Spacer(modifier = Modifier.height(24.dp))
             
+            permissionError?.let { message ->
+                Text(
+                    text = message,
+                    color = ErrorRed,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+
             DecibelMeter(currentDb = currentDb)
             
             Spacer(modifier = Modifier.weight(1f))
@@ -113,6 +134,14 @@ fun NoiseTestScreen(
             Button(
                 onClick = {
                     if (!isTesting) {
+                        hasMicPermission = noiseDetector.hasPermission()
+                        if (!hasMicPermission) {
+                            permissionError = MIC_PERMISSION_MESSAGE
+                            return@Button
+                        } else {
+                            permissionError = null
+                        }
+
                         isTesting = true
                         testResult = null
                         val dbReadings = mutableListOf<Float>()

@@ -28,6 +28,9 @@ import com.joshtalk.sampletask.ui.theme.TextGray
 import kotlinx.coroutines.launch
 import java.util.UUID
 
+private const val MIC_PERMISSION_MESSAGE = "Microphone permission not granted. Please enable it in Settings to record."
+private const val CAMERA_PERMISSION_MESSAGE = "Camera permission not granted. Please enable it in Settings to capture images."
+
 /**
  * Screen for Photo Capture task where agent takes a photo and provides description.
  * Integrates CameraX for photo capture, allows text and optional audio description.
@@ -56,6 +59,8 @@ fun PhotoCaptureScreen(
     var isRecording by remember { mutableStateOf(false) }
     var recordingResult by remember { mutableStateOf<RecordingState?>(null) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
+    var hasMicPermission by remember { mutableStateOf(audioRecorder.hasPermission()) }
+    var hasCameraPermission by remember { mutableStateOf(cameraProvider.hasPermission()) }
     
     val scope = rememberCoroutineScope()
     
@@ -64,6 +69,11 @@ fun PhotoCaptureScreen(
             audioRecorder.release()
             audioPlayer.release()
         }
+    }
+
+    LaunchedEffect(Unit) {
+        hasMicPermission = audioRecorder.hasPermission()
+        hasCameraPermission = cameraProvider.hasPermission()
     }
     
     Scaffold(
@@ -100,11 +110,23 @@ fun PhotoCaptureScreen(
             )
             
             if (capturedPhotoPath == null) {
+                if (!hasCameraPermission) {
+                    Text(
+                        text = CAMERA_PERMISSION_MESSAGE,
+                        color = ErrorRed,
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+
                 Button(
                     onClick = {
                         scope.launch {
-                            if (!cameraProvider.hasPermission()) {
-                                errorMessage = "Camera permission not granted"
+                            val permissionGranted = cameraProvider.hasPermission()
+                            hasCameraPermission = permissionGranted
+                            if (!permissionGranted) {
+                                errorMessage = CAMERA_PERMISSION_MESSAGE
                                 return@launch
                             }
                             cameraProvider.capturePhoto().fold(
@@ -123,7 +145,8 @@ fun PhotoCaptureScreen(
                         .height(56.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = PrimaryBlue
-                    )
+                    ),
+                    enabled = hasCameraPermission
                 ) {
                     Text("Capture Image", fontSize = 16.sp)
                 }
@@ -170,15 +193,37 @@ fun PhotoCaptureScreen(
                     color = TextGray,
                     modifier = Modifier.fillMaxWidth()
                 )
+
+                if (!hasMicPermission) {
+                    Text(
+                        text = MIC_PERMISSION_MESSAGE,
+                        color = ErrorRed,
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
                 
                 PressAndHoldMicButton(
                     onPressStart = {
+                        val permissionGranted = audioRecorder.hasPermission()
+                        hasMicPermission = permissionGranted
+                        if (!permissionGranted) {
+                            errorMessage = MIC_PERMISSION_MESSAGE
+                            recordingResult = null
+                            isRecording = false
+                            return@PressAndHoldMicButton
+                        }
+                        
                         isRecording = true
                         recordingResult = null
                         errorMessage = null
                         audioRecorder.startRecording()
                     },
                     onPressRelease = {
+                        if (!isRecording) {
+                            return@PressAndHoldMicButton
+                        }
                         isRecording = false
                         val result = audioRecorder.stopRecording()
                         recordingResult = result
@@ -219,6 +264,7 @@ fun PhotoCaptureScreen(
                 ) {
                     OutlinedButton(
                         onClick = {
+                            hasCameraPermission = cameraProvider.hasPermission()
                             capturedPhotoPath = null
                             textDescription = ""
                             recordingResult = null

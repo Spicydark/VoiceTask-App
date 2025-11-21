@@ -10,6 +10,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 actual class AudioRecorder actual constructor(private val context: PlatformContext) {
     private var currentState: RecordingState = RecordingState.Idle
 
+    actual fun hasPermission(): Boolean = true
+
     actual fun startRecording() {
         currentState = RecordingState.Error("Recording not yet supported on iOS")
     }
@@ -57,6 +59,8 @@ actual class AudioPlayer actual constructor(private val context: PlatformContext
  */
 actual class NoiseDetector actual constructor(private val context: PlatformContext) {
     private val noiseLevel = MutableStateFlow(0f)
+
+    actual fun hasPermission(): Boolean = true
 
     actual fun startDetection(onNoiseLevel: (Float) -> Unit) {
         noiseLevel.value = 0f

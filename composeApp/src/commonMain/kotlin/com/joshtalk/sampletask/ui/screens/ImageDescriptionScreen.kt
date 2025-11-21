@@ -28,6 +28,8 @@ import com.joshtalk.sampletask.ui.theme.TextGray
 import kotlinx.coroutines.launch
 import java.util.UUID
 
+private const val MIC_PERMISSION_MESSAGE = "Microphone permission not granted. Please enable it in Settings to record."
+
 /**
  * Screen for Image Description task where agent describes a displayed product image.
  * Fetches random product image from API, records agent's spoken description (10-20s),
@@ -56,6 +58,7 @@ fun ImageDescriptionScreen(
     var isRecording by remember { mutableStateOf(false) }
     var recordingResult by remember { mutableStateOf<RecordingState?>(null) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
+    var hasMicPermission by remember { mutableStateOf(audioRecorder.hasPermission()) }
     
     val scope = rememberCoroutineScope()
     
@@ -74,6 +77,10 @@ fun ImageDescriptionScreen(
                 isLoading = false
             }
         )
+    }
+
+    LaunchedEffect(Unit) {
+        hasMicPermission = audioRecorder.hasPermission()
     }
     
     DisposableEffect(Unit) {
@@ -113,6 +120,15 @@ fun ImageDescriptionScreen(
                 fontSize = 16.sp,
                 color = TextGray
             )
+
+            if (!hasMicPermission) {
+                Text(
+                    text = MIC_PERMISSION_MESSAGE,
+                    color = ErrorRed,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.SemiBold
+                )
+            }
             
             if (isLoading) {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
@@ -134,12 +150,24 @@ fun ImageDescriptionScreen(
             
             PressAndHoldMicButton(
                 onPressStart = {
+                    val permissionGranted = audioRecorder.hasPermission()
+                    hasMicPermission = permissionGranted
+                    if (!permissionGranted) {
+                        errorMessage = MIC_PERMISSION_MESSAGE
+                        recordingResult = null
+                        isRecording = false
+                        return@PressAndHoldMicButton
+                    }
+
                     isRecording = true
                     recordingResult = null
                     errorMessage = null
                     audioRecorder.startRecording()
                 },
                 onPressRelease = {
+                    if (!isRecording) {
+                        return@PressAndHoldMicButton
+                    }
                     isRecording = false
                     val result = audioRecorder.stopRecording()
                     recordingResult = result
