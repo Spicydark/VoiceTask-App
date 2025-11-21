@@ -27,6 +27,20 @@ import com.joshtalk.sampletask.ui.theme.PrimaryBlue
 import com.joshtalk.sampletask.ui.theme.TextGray
 import kotlinx.coroutines.launch
 
+/**
+ * Screen for Text Reading task workflow where agent reads aloud a product description.
+ * Fetches random product from API, handles recording with 10-20s validation, and provides
+ * quality checkboxes that must all be confirmed before submission.
+ * 
+ * The three-checkbox pattern (no noise, no mistakes, Hindi confirmation) ensures agents
+ * review their recording quality before committing to database.
+ * 
+ * @param apiService Service for fetching product catalog data
+ * @param audioRecorder Platform audio recorder for voice capture
+ * @param audioPlayer Platform audio player for recording playback
+ * @param taskRepository Database repository for persisting completed tasks
+ * @param onNavigateBack Callback to return to task selection
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TextReadingScreen(
@@ -42,14 +56,12 @@ fun TextReadingScreen(
     var recordingResult by remember { mutableStateOf<RecordingState?>(null) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
     
-    // Checkboxes
     var checkNoNoise by remember { mutableStateOf(false) }
     var checkNoMistakes by remember { mutableStateOf(false) }
     var checkHindi by remember { mutableStateOf(false) }
     
     val scope = rememberCoroutineScope()
     
-    // Load product on first composition
     LaunchedEffect(Unit) {
         apiService.getProducts().fold(
             onSuccess = { response ->
@@ -103,7 +115,6 @@ fun TextReadingScreen(
                 color = TextGray
             )
             
-            // Text passage card
             if (isLoading) {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
             } else {
@@ -124,7 +135,6 @@ fun TextReadingScreen(
             
             Spacer(modifier = Modifier.height(8.dp))
             
-            // Mic button
             PressAndHoldMicButton(
                 onPressStart = {
                     isRecording = true
@@ -148,7 +158,6 @@ fun TextReadingScreen(
                 modifier = Modifier.align(Alignment.CenterHorizontally)
             )
             
-            // Error message
             errorMessage?.let { message ->
                 Text(
                     text = message,
@@ -159,7 +168,6 @@ fun TextReadingScreen(
                 )
             }
             
-            // Recording playback
             if (recordingResult is RecordingState.Completed) {
                 val completed = recordingResult as RecordingState.Completed
                 
@@ -185,7 +193,6 @@ fun TextReadingScreen(
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
                 
-                // Checkboxes
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier.fillMaxWidth()
@@ -221,7 +228,6 @@ fun TextReadingScreen(
                 
                 Spacer(modifier = Modifier.height(16.dp))
                 
-                // Buttons
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(12.dp)

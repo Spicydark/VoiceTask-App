@@ -10,6 +10,21 @@ import com.joshtalk.sampletask.navigation.Screen
 import com.joshtalk.sampletask.platform.*
 import com.joshtalk.sampletask.ui.screens.*
 
+/**
+ * Root composable defining the complete 7-screen navigation flow for the Sample Task workflow.
+ * Orchestrates transitions between onboarding, noise testing, task selection, task execution,
+ * and history review screens. Platform services (audio, camera, database) are injected from
+ * the platform-specific entry point (MainActivity on Android).
+ * 
+ * Navigation flow enforces linear progression through noise gate before allowing task access.
+ * Task selection acts as hub with access to three task types and history review.
+ * 
+ * @param audioRecorder Platform-specific audio recording service
+ * @param audioPlayer Platform-specific audio playback service  
+ * @param noiseDetector Platform-specific ambient noise detection service
+ * @param cameraProvider Platform-specific camera capture service
+ * @param taskRepository Database repository for task persistence
+ */
 @Composable
 fun App(
     audioRecorder: AudioRecorder,

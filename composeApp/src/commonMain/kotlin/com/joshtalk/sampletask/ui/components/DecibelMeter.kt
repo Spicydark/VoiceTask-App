@@ -21,10 +21,23 @@ import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin
 
+/**
+ * Converts degrees to radians for trigonometric calculations.
+ * Used internally for positioning the meter needle at the correct angle.
+ */
 private fun toRadians(degrees: Double): Double {
     return degrees * PI / 180.0
 }
 
+/**
+ * Visual gauge component displaying real-time ambient noise levels in decibels.
+ * Renders a semicircular arc meter with color-coded safe (blue, 0-40dB) and 
+ * noisy (red, 40-60dB) zones. A rotating needle indicates current level.
+ * Used during the ambient noise test to verify environment meets < 40dB requirement.
+ * 
+ * @param currentDb Current decibel reading from NoiseDetector (automatically clamped to 0-60 range)
+ * @param modifier Optional modifier for positioning/sizing the component
+ */
 @Composable
 fun DecibelMeter(
     currentDb: Float,
@@ -45,7 +58,6 @@ fun DecibelMeter(
             val blueSweep = 180f * (40f / 60f)
             val redSweep = 180f - blueSweep
 
-            // Blue arc for safe range (0-40 dB)
             drawArc(
                 color = GaugeBlue,
                 startAngle = 180f,
@@ -59,7 +71,6 @@ fun DecibelMeter(
                 style = Stroke(width = strokeWidth, cap = StrokeCap.Round)
             )
 
-            // Red arc for noisy range (40-60 dB)
             drawArc(
                 color = GaugeRed,
                 startAngle = 180f + blueSweep,
@@ -73,7 +84,6 @@ fun DecibelMeter(
                 style = Stroke(width = strokeWidth, cap = StrokeCap.Round)
             )
             
-            // Draw needle
             val angle = 180f + (clampedDb / 60f * 180f)
             val angleRad = toRadians(angle.toDouble())
             val needleLength = radius * 0.7f
@@ -91,7 +101,6 @@ fun DecibelMeter(
             )
         }
         
-        // Center text
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.offset(y = 30.dp)
@@ -109,7 +118,6 @@ fun DecibelMeter(
             )
         }
         
-        // Scale markers
         Row(
             modifier = Modifier
                 .fillMaxWidth()

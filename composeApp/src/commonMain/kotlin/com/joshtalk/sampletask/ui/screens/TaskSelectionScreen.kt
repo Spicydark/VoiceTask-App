@@ -12,6 +12,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.joshtalk.sampletask.ui.theme.PrimaryBlue
 
+/**
+ * Hub screen for selecting task type after passing noise gate check.
+ * Presents three task options (Text Reading, Image Description, Photo Capture)
+ * plus access to task history. Acts as the central navigation point for task workflows.
+ * 
+ * Each task button routes to a specific task execution screen with appropriate
+ * platform services (camera, audio, etc.) injected by parent navigation.
+ * 
+ * @param onNavigateBack Return to noise test screen
+ * @param onNavigateToTextReading Navigate to text reading task
+ * @param onNavigateToImageDescription Navigate to image description task
+ * @param onNavigateToPhotoCapture Navigate to photo capture task
+ * @param onNavigateToHistory Navigate to completed tasks history
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TaskSelectionScreen(

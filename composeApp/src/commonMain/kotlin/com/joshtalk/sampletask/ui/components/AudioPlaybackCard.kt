@@ -12,6 +12,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.joshtalk.sampletask.platform.AudioPlayer
 
+/**
+ * Reusable audio playback control card for recorded audio preview.
+ * Provides play/pause toggle and delete functionality. Visual progress indicator
+ * shows simplified playback state (no actual progress tracking yet).
+ * 
+ * Used across all task screens to allow agents to review their recordings before submission.
+ * Automatically releases audio player resources when component is disposed.
+ * 
+ * @param audioPath Absolute file path to the audio recording
+ * @param audioPlayer Platform audio player service
+ * @param onDelete Callback invoked when user deletes the recording
+ * @param modifier Optional modifier for styling/positioning
+ */
 @Composable
 fun AudioPlaybackCard(
     audioPath: String,

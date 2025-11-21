@@ -18,6 +18,17 @@ import com.joshtalk.sampletask.ui.components.PlatformAsyncImage
 import com.joshtalk.sampletask.ui.theme.PrimaryBlue
 import com.joshtalk.sampletask.ui.theme.TextGray
 
+/**
+ * Screen displaying aggregated task history with summary statistics and detail list.
+ * Shows total task count, cumulative duration, and scrollable list of all completed tasks.
+ * Uses reactive Flow from repository to automatically update on new task submissions.
+ * 
+ * Each task card displays type-specific preview (image/text/photo), timestamp, and duration.
+ * This serves as the QA reference screen for agents to review their completed work.
+ * 
+ * @param taskRepository Database repository providing reactive task data
+ * @param onNavigateBack Callback to return to task selection
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TaskHistoryScreen(
@@ -58,7 +69,6 @@ fun TaskHistoryScreen(
                 .fillMaxSize()
                 .padding(padding)
         ) {
-            // Header with stats
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -103,7 +113,6 @@ fun TaskHistoryScreen(
                 }
             }
 
-            // Task list
             if (tasks.isEmpty()) {
                 Box(
                     modifier = Modifier.fillMaxSize(),
@@ -155,7 +164,6 @@ fun TaskListItem(task: TaskData) {
                 .padding(16.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            // Thumbnail or icon based on task type
             when (task) {
                 is TaskData.ImageDescription -> {
                     Card(
@@ -208,7 +216,6 @@ fun TaskListItem(task: TaskData) {
                 }
             }
 
-            // Task details
             Column(
                 modifier = Modifier.weight(1f),
                 verticalArrangement = Arrangement.spacedBy(4.dp)
@@ -249,7 +256,6 @@ fun TaskListItem(task: TaskData) {
                     )
                 }
 
-                // Preview text for TextReading tasks
                 when (task) {
                     is TaskData.TextReading -> {
                         val snippet = task.text.take(50)

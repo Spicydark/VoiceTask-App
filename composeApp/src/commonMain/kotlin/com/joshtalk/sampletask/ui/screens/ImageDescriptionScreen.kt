@@ -28,6 +28,20 @@ import com.joshtalk.sampletask.ui.theme.TextGray
 import kotlinx.coroutines.launch
 import java.util.UUID
 
+/**
+ * Screen for Image Description task where agent describes a displayed product image.
+ * Fetches random product image from API, records agent's spoken description (10-20s),
+ * and saves the task to database.
+ * 
+ * Similar to TextReadingScreen but focuses on visual content description rather than
+ * reading provided text. No quality checkboxes required for this task type.
+ * 
+ * @param apiService Service for fetching product images
+ * @param audioRecorder Platform audio recorder for voice capture
+ * @param audioPlayer Platform audio player for recording playback
+ * @param taskRepository Database repository for persisting completed tasks
+ * @param onNavigateBack Callback to return to task selection
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ImageDescriptionScreen(
@@ -100,7 +114,6 @@ fun ImageDescriptionScreen(
                 color = TextGray
             )
             
-            // Image display
             if (isLoading) {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
             } else {
@@ -119,7 +132,6 @@ fun ImageDescriptionScreen(
             
             Spacer(modifier = Modifier.height(8.dp))
             
-            // Mic button
             PressAndHoldMicButton(
                 onPressStart = {
                     isRecording = true
@@ -150,7 +162,6 @@ fun ImageDescriptionScreen(
                 )
             }
             
-            // Recording playback
             if (recordingResult is RecordingState.Completed) {
                 val completed = recordingResult as RecordingState.Completed
                 
@@ -173,7 +184,6 @@ fun ImageDescriptionScreen(
                 
                 Spacer(modifier = Modifier.height(16.dp))
                 
-                // Buttons
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(12.dp)

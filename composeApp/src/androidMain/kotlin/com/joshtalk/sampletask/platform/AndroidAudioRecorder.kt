@@ -1,17 +1,26 @@
 package com.joshtalk.sampletask.platform
 
-// Final attempt to force update
 import android.media.MediaRecorder
 import android.os.Build
 import java.io.File
 import kotlinx.coroutines.*
 
+/**
+ * Android implementation of audio recording using MediaRecorder.
+ * Enforces 10-20 second recording constraint and manages audio file lifecycle.
+ * Files are stored in the app's cache directory as MPEG-4 AAC encoded audio.
+ */
 actual class AudioRecorder actual constructor(private val context: PlatformContext) {
     private var mediaRecorder: MediaRecorder? = null
     private var outputFile: File? = null
     private var startTime: Long = 0
     private var currentState: RecordingState = RecordingState.Idle
 
+    /**
+     * Initiates audio recording from the device microphone.
+     * Creates a timestamped audio file in cache directory and begins recording in AAC format.
+     * Updates state to Recording on success or Error if initialization fails.
+     */
     actual fun startRecording() {
         try {
             val timestamp = System.currentTimeMillis()
@@ -38,6 +47,11 @@ actual class AudioRecorder actual constructor(private val context: PlatformConte
         }
     }
 
+    /**
+     * Stops the current recording session and validates duration constraints.
+     * Enforces 10-20 second duration requirement. Files outside this range are deleted.
+     * @return RecordingState indicating completion with file path and duration, or an error state
+     */
     actual fun stopRecording(): RecordingState {
         return try {
             mediaRecorder?.apply {
@@ -68,6 +82,10 @@ actual class AudioRecorder actual constructor(private val context: PlatformConte
         }
     }
 
+    /**
+     * Returns the current recording state with updated elapsed time if recording is active.
+     * @return Current RecordingState with real-time elapsed milliseconds
+     */
     actual fun getCurrentState(): RecordingState {
         if (currentState is RecordingState.Recording) {
             val elapsed = System.currentTimeMillis() - startTime
@@ -76,19 +94,32 @@ actual class AudioRecorder actual constructor(private val context: PlatformConte
         return currentState
     }
 
+    /**
+     * Releases MediaRecorder resources. Safe to call multiple times.
+     * Should be called when the component is disposed or activity is destroyed.
+     */
     actual fun release() {
         try {
             mediaRecorder?.release()
             mediaRecorder = null
         } catch (e: Exception) {
-            // Ignore
+            // Silently ignore release errors as this is cleanup code
         }
     }
 }
 
+/**
+ * Android implementation of audio playback using MediaPlayer.
+ * Manages playback lifecycle of recorded audio files from local storage.
+ */
 actual class AudioPlayer actual constructor(private val context: PlatformContext) {
     private var mediaPlayer: android.media.MediaPlayer? = null
 
+    /**
+     * Plays an audio file from the given file path.
+     * Stops any currently playing audio before starting the new file.
+     * @param filePath Absolute path to the audio file to play
+     */
     actual fun play(filePath: String) {
         try {
             mediaPlayer?.release()
@@ -98,7 +129,7 @@ actual class AudioPlayer actual constructor(private val context: PlatformContext
                 start()
             }
         } catch (e: Exception) {
-            // Handle error
+            // Silently fail - file may not exist or be corrupted
         }
     }
 
@@ -121,6 +152,12 @@ actual class AudioPlayer actual constructor(private val context: PlatformContext
         return mediaPlayer?.isPlaying ?: false
     }
 
+    /**
+     * Retrieves the duration of an audio file in seconds without playing it.
+     * Creates a temporary MediaPlayer instance to read file metadata.
+     * @param filePath Absolute path to the audio file
+     * @return Duration in seconds, or 0 if file cannot be read
+     */
     actual fun getDuration(filePath: String): Int {
         return try {
             val mp = android.media.MediaPlayer().apply {
@@ -136,10 +173,21 @@ actual class AudioPlayer actual constructor(private val context: PlatformContext
     }
 }
 
+/**
+ * Android implementation for ambient noise level detection using MediaRecorder.
+ * Continuously measures microphone amplitude and converts to decibel scale for noise testing.
+ */
 actual class NoiseDetector actual constructor(private val context: PlatformContext) {
     private var mediaRecorder: MediaRecorder? = null
     private var job: Job? = null
 
+    /**
+     * Starts continuous noise level monitoring from the device microphone.
+     * Samples amplitude every 100ms and converts to decibel scale using logarithmic formula.
+     * The conversion formula: dB = 20 * log10(amplitude) provides rough approximation suitable
+     * for comparing relative noise levels, not calibrated to absolute SPL measurements.
+     * @param onNoiseLevel Callback invoked every 100ms with current decibel reading (0-100+ range)
+     */
     actual fun startDetection(onNoiseLevel: (Float) -> Unit) {
         try {
             mediaRecorder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -159,7 +207,6 @@ actual class NoiseDetector actual constructor(private val context: PlatformConte
             job = CoroutineScope(Dispatchers.Default).launch {
                 while (isActive) {
                     val amplitude = mediaRecorder?.maxAmplitude ?: 0
-                    // Convert amplitude to decibels (rough approximation)
                     val db = if (amplitude > 0) {
                         20 * kotlin.math.log10(amplitude.toDouble())
                     } else {
@@ -170,7 +217,7 @@ actual class NoiseDetector actual constructor(private val context: PlatformConte
                 }
             }
         } catch (e: Exception) {
-            // Handle error
+            // Silently fail - permissions may not be granted or mic unavailable
         }
     }
 

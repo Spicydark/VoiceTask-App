@@ -28,6 +28,20 @@ import com.joshtalk.sampletask.ui.theme.TextGray
 import kotlinx.coroutines.launch
 import java.util.UUID
 
+/**
+ * Screen for Photo Capture task where agent takes a photo and provides description.
+ * Integrates CameraX for photo capture, allows text and optional audio description.
+ * Requires text description before submission; audio description is optional but encouraged.
+ * 
+ * This task type tests both visual capture and descriptive skills, combining photography
+ * with documentation capabilities essential for field work.
+ * 
+ * @param cameraProvider Platform camera service for photo capture
+ * @param audioRecorder Platform audio recorder for optional voice description
+ * @param audioPlayer Platform audio player for recording playback
+ * @param taskRepository Database repository for persisting completed tasks
+ * @param onNavigateBack Callback to return to task selection
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PhotoCaptureScreen(
@@ -85,7 +99,6 @@ fun PhotoCaptureScreen(
                 modifier = Modifier.fillMaxWidth()
             )
             
-            // Camera capture button or preview
             if (capturedPhotoPath == null) {
                 Button(
                     onClick = {
@@ -140,7 +153,6 @@ fun PhotoCaptureScreen(
                 
                 Spacer(modifier = Modifier.height(8.dp))
                 
-                // Text description field
                 OutlinedTextField(
                     value = textDescription,
                     onValueChange = { textDescription = it },
@@ -159,7 +171,6 @@ fun PhotoCaptureScreen(
                     modifier = Modifier.fillMaxWidth()
                 )
                 
-                // Mic button
                 PressAndHoldMicButton(
                     onPressStart = {
                         isRecording = true
@@ -188,7 +199,6 @@ fun PhotoCaptureScreen(
                     )
                 }
                 
-                // Recording playback
                 if (recordingResult is RecordingState.Completed) {
                     val completed = recordingResult as RecordingState.Completed
                     AudioPlaybackCard(
@@ -203,7 +213,6 @@ fun PhotoCaptureScreen(
                 
                 Spacer(modifier = Modifier.height(16.dp))
                 
-                // Buttons
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(12.dp)
