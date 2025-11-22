@@ -1,0 +1,5 @@
+com.joshtalk.sampletask.test.composeApp-androidTest-0 C:\Users\kumar\OneDrive\Documents\Spring-Projects\VoiceTask-App\composeApp\build\generated\res\resValues\androidTest\debug
+com.joshtalk.sampletask.test.composeApp-updated_navigation_xml-1 C:\Users\kumar\OneDrive\Documents\Spring-Projects\VoiceTask-App\composeApp\build\generated\updated_navigation_xml\debugAndroidTest
+com.joshtalk.sampletask.test.composeApp-mergeDebugAndroidTestResources-2 C:\Users\kumar\OneDrive\Documents\Spring-Projects\VoiceTask-App\composeApp\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.joshtalk.sampletask.test.composeApp-mergeDebugAndroidTestResources-3 C:\Users\kumar\OneDrive\Documents\Spring-Projects\VoiceTask-App\composeApp\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.joshtalk.sampletask.test.composeApp-debugAndroidTest-4 C:\Users\kumar\OneDrive\Documents\Spring-Projects\VoiceTask-App\composeApp\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
